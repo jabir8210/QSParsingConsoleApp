@@ -46,18 +46,22 @@ public class QSParsingUnitTest
         Assert.AreEqual(0, result);
     }
 
+
     [TestMethod]
-    public void Count_TwoPairs_ReturnsTwo()
+    public void ValueOf_SinglePair_ReturnsValue()
     {
         // Arrange
         QSParser parser = new QSParser();
 
         // Act
-        int result = parser.Count("name=John&age=30");
+        string result = parser.ValueOf("name=John", "name");
 
         // Assert
-        Assert.AreEqual(2, result);
+        Assert.AreEqual("John", result);
     }
 
-    
+
+
+
+
 }
