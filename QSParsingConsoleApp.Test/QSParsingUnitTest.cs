@@ -21,6 +21,19 @@ public class QSParsingUnitTest
     }
 
     [TestMethod]
+    public void Count_EmptyString_ReturnsZero()
+    {
+        // Arrange
+        QSParser parser = new QSParser();
+
+        // Act
+        int result = parser.Count("");
+
+        // Assert
+        Assert.AreEqual(0, result);
+    }
+
+    [TestMethod]
     public void Count_TwoPairs_ReturnsTwo()
     {
         // Arrange
@@ -33,16 +46,5 @@ public class QSParsingUnitTest
         Assert.AreEqual(2, result);
     }
 
-    [TestMethod]
-    public void Count_EmptyString_ReturnsZero()
-    {
-        // Arrange
-        QSParser parser = new QSParser();
-
-        // Act
-        int result = parser.Count("");
-
-        // Assert
-        Assert.AreEqual(0, result);
-    }
+    
 }
