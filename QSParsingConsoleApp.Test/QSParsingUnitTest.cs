@@ -77,5 +77,18 @@ public class QSParsingUnitTest
         Assert.AreEqual("Aarhus", resultCity); // Forventer "Aarhus" for "city"
     }
 
+    [TestMethod]
+    public void Count_MultiplePairs_ReturnsCorrectCount()
+    {
+        // Arrange
+        QSParser parser = new QSParser();
+
+        // Act
+        int result = parser.Count("age=30&name=John&city=Aarhus");
+
+        // Assert
+        Assert.AreEqual(3, result);  // Expecting 3 pairs in the query string
+    }
+
 
 }
